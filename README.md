@@ -4,4 +4,4 @@ ADD the syntax you want to check in string.txt.
 CHANGE the rules of grammar you want in CNF.txt, in Chomsky Normal Form.
 
 TO COMPILE :
-g++ main.c token.c
+gcc main.c token.c
