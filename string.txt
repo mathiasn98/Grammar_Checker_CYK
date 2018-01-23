@@ -1,0 +1,21 @@
+Program testing ;
+var
+  Ini , itu : integer ;
+  testing : array [ 1 . . 100 , 1 . . 200 ] of integer ;
+Begin
+  while ( i * 78 < 678 * asd ) do
+  begin
+     if ( x = 10 ) then
+     begin
+         a : = 10 ;
+     end
+     else if ( x = 2 ) then
+     begin
+         b : = 10 ;
+     end
+     else
+     begin
+        c : = 20 ;
+     end ;
+  end ;
+end .

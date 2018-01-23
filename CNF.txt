@@ -1,0 +1,135 @@
+<S> -> <P_AND_V><M>
+<M> -> <B_TERM><M_E_COLON>
+<M_E_COLON> -> <MAINPROG><E_COLON>
+<E_COLON> -> <E_TERM><COLON>
+<P_AND_V> -> <P><V>
+<P> -> <PT_H><SEMICOLON>
+<PT_H> -> <P_TERM><HASH>
+<V> -> <V_TERM><VARIABEL>
+<V_TERM> -> v
+<E_TERM> -> e
+<P_TERM> -> p
+<POINT> -> .
+<HASH> -> #
+<COLON> -> :
+<SEMICOLON> -> ;
+<COMMA> -> ,
+<AT> -> @
+<I_TERM> -> i
+<K_TERM> -> k
+<C_TERM> -> c
+<Z_TERM> -> z
+<W_TERM> -> w
+<Y_TERM> -> y
+<F_TERM> -> f
+<D_TERM> -> d
+<B_TERM> -> b
+<L_TERM> -> l
+<M_TERM> -> m
+<N_TERM> -> n
+<J_TERM> -> j
+<X_TERM> -> x
+<G_TERM> -> g
+<T_TERM> -> t
+<W_TERM> -> w
+<R_TERM> -> r
+<S_TERM> -> s
+<H_TERM> -> h
+<K_S_B> -> [
+<K_S_T> -> ]
+<K_B_B> -> (
+<K_B_T> -> )
+<LESS> -> <
+<U_TERM> -> u
+<GT> -> >
+<EQ> -> =
+<M> -> <BT_MP> <ET_P>
+<BT_MP> -> <B_TERM><MAINPROG>
+<ET_P> -> <E_TERM><POINT>
+<VARIABEL> -> <VARIABEL><VARIABEL> | <H_NV_C_VT><SEMICOLON> | <H_NV_C_VAS><SEMICOLON> | <H_NV_C_VAD><SEMICOLON> | <H_COLON><V_SC>
+<V_SC> -> <VARTYPE><SEMICOLON>
+<H_NV> -> <HASH><NEXTVAR> | #
+<H_NV_C> -> <H_NV><COLON>
+<H_NV_C_VT> -> <H_NV_C><VARTYPE>
+<H_NV_C_VAS> -> <H_NV_C><VARARRAYSATU>
+<H_NV_C_VAD> -> <H_NV_C><VARARRAYDUA>
+<VARTYPE> -> i | k | c | z
+<DOUBLE_POINT> -> <POINT><POINT>
+<AT_K_S_B> -> <AT><K_S_B>
+<AT_K_S_B_H> -> <AT_K_S_B><HASH>
+<AT_K_S_B_H_DP> -> <AT_K_S_B_H><DOUBLE_POINT>
+<AT_K_S_B_H_DP_H> -> <AT_K_S_B_H_DP><HASH>
+<Y_T_VT> -> <Y_TERM><VARTYPE>
+<K_S_T_Y_T_VT> -> <K_S_T><Y_T_VT>
+<C_H> -> <COMMA><HASH>
+<DP_H> -> <DOUBLE_POINT><HASH>
+<C_H_DP_H> -> <C_H><DP_H>
+<C_H_DP_H_K_S_T_Y_T_VT> -> <C_H_DP_H><K_S_T_Y_T_VT>
+<MOP_HASH> -> <MATHOP><HASH>
+<VARARRAYSATU> -> <AT_K_S_B_H_DP_H><K_S_T_Y_T_VT>
+<VARARRAYDUA> -> <AT_K_S_B_H_DP_H><C_H_DP_H_K_S_T_Y_T_VT>
+<NEXTVAR> -> <COMMA><HASH> | <NEXTVAR><NEXTVAR>
+<MAINPROG> -> <MAINPROG><MAINPROG> | <F_K_B_B_H_C_EQ_H><T_T_H_K_M> | <F_K_B_B_H_C_EQ_H><J_H_K_M> | <F_K_B_B><H_C_EQ_H_T_T_H_S_H_K_M> | <F_K_B_B_H_C_EQ_H><J_H_S_H_K_M> | <H_COLON><E_M_SC> | <N_T_LEXT_X_T><B_TERM_MP_E_T_ELSE> | <W_T_LE_D_T><B_T_M_E_SC> | <R_TERM><M_U_L_S> | <G_TERM><K_B_B_H_K_B_T_SC> | <H_TERM><K_B_B_H_K_B_T_SC>
+<ASSIGNMENT> -> <H_COLON><E_M_SC>
+<M_SC> -> <MATHEXP><SEMICOLON>
+<E_M_SC> -> <EQ><M_SC>
+<H_COLON> -> <HASH><COLON>
+<MATHOP> -> + | - | * | / | m | q
+<MATHEXP> -> <HASH><NEXTMATHEXP> | #
+<NEXTMATHEXP> -> <MATHOP><HASH> | <MOP_HASH><NEXTMATHEXP>
+<N_T_LEXP> -> <N_TERM><LOGICEXP>
+<N_T_LEXT_X_T> -> <N_T_LEXP><X_TERM>
+<E_T_ELSE> -> <E_TERM><ELSE>
+<MP_E_T_ELSE> -> <MAINPROG><E_T_ELSE>
+<B_T_MP_E_T_ELSE> -> <B_TERM><MP_E_T_ELSE>
+<B_TERM_MP_E_T_ELSE> -> <B_TERM><MP_E_T_ELSE>
+<ELSE> -> ; | <L_T_N_T_L_X_T_B_T><M_E_T_ELSE> | <L_TERM><B_T_M_E_ELSE>
+<L_T_N_T> -> <L_TERM><N_TERM>
+<X_T_B_T> -> <X_TERM><B_TERM>
+<L_T_N_T_L_X_T_B_T> -> <L_T_N_T><L_X_T_B_T>
+<M_E_T_ELSE> -> <MAINPROG><E_T_ELSE>
+<L_X_T_B_T> -> <LOGICEXP><X_T_B_T>
+<B_T_M_E_SC> -> <B_TERM><M_E_SC>
+<B_T_M_E_ELSE> -> <B_MP><END_ELSE>
+<END_ELSE> -> <E_TERM><ELSE>
+<B_MP> -> <B_TERM><MAINPROG>
+<CONDITION> -> <K_B_B><MEXP_COP_H_K_B_T>
+<COND_CONDOP> -> <CONDITION><CONDITIONOP>
+<COP_H_K_B_T> -> <CONDITIONOP><H_K_B_T>
+<MEXP_COP_H_K_B_T> -> <MATHEXP><COP_H_K_B_T>
+<CONDITIONOP> -> < | > | <LESS><EQ> | <GT><EQ> | = | <LESS><GT>
+<W_T_LE_D_T> -> <W_T_LE><D_TERM>
+<W_T_LE> -> <W_TERM><LOGICEXP>
+<L_S> -> <LOGICEXP><SEMICOLON>
+<U_L_S> -> <U_TERM><L_S>
+<M_U_L_S> -> <MAINPROG><U_L_S>
+<K_B_B_H_K_B_T> -> <K_B_B><H_K_B_T>
+<K_B_B_H_K_B_T_SC> -> <K_B_B_H_K_B_T><SEMICOLON>
+<LOGICEXP> -> <K_B_B><L_L_L_K_B_T> | <K_B_B><MEXP_COP_H_K_B_T>
+<L_K_B_T> -> <LOGICEXP><K_B_T>
+<L_L_K_B_T> -> <LOGICOP><L_K_B_T>
+<H_K_B_T> -> <MATHEXP><K_B_T>
+<L_L_L_K_B_T> -> <LOGICEXP><L_L_K_B_T>
+<LOGICOP> -> a | o
+<H_EQ> -> <HASH><EQ>
+<H_C_EQ> -> <HASH><C_EQ>
+<C_EQ> -> <COLON><EQ>
+<E_SC> -> <E_TERM><SEMICOLON>
+<J_H> -> <J_TERM><HASH>
+<S_H> -> <S_TERM><HASH>
+<DB_T> -> <D_TERM><B_TERM>
+<H_EQ_H> -> <H_EQ><HASH>
+<F_K_B_B> -> <F_TERM><K_B_B>
+<K_B_T_DB_T> -> <K_B_T><DB_T>
+<M_E_SC> -> <MAINPROG><E_SC>
+<K_M> -> <K_B_T_DB_T><M_E_SC>
+<S_H_K_M> -> <S_H><K_M>
+<F_K_B_B_H_C_EQ_H> -> <F_K_B_B><H_C_EQ_H>
+<J_H_S_H_K_M> -> <J_H><S_H_K_M>
+<J_H_K_M> -> <J_H><K_M> 
+<T_T_H> -> <T_TERM><HASH>
+<T_T_H_K_M> -> <T_T_H><K_M>
+<H_EQ_H> -> <H_EQ><HASH>
+<H_C_EQ_H> -> <H_C_EQ><HASH>
+<H_C_EQ_H_T_T_H> -> <H_C_EQ_H><T_T_H>
+<H_C_EQ_H_T_T_H_S_H_K_M> -> <H_C_EQ_H_T_T_H><S_H_K_M>
